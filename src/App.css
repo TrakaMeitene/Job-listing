@@ -1,0 +1,250 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin:0;
+}
+.header-image{
+    width:100%;
+}
+.header{
+    width:100%;
+    height:200px;
+    background-color: hsl(180, 29%, 50%);
+    background-image: url("./images/bg-header-desktop.svg");
+    background-size: cover;
+}
+body{
+    background-color: hsl(185, 58%, 96%);
+    font-family: 'Spartan', sans-serif;
+}
+.data-window{
+    width:80%;
+    margin:20px auto ;
+    height:150px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 5px 10px hsl(180, 14%, 90%);
+    display: flex;
+    flex-direction: row;
+    border-radius: 5px;
+    align-items: center;
+}
+.left-color{
+    border-left: 5px solid hsl(180, 47%, 40%);
+}
+.top-margin{
+    margin-top:100px;
+}
+.data-window img{
+ margin:30px 30px 30px 50px;
+}
+p, h4{
+    font-weight:700;
+}
+p{
+    font-size:14px;
+    color: hsl(180, 52%, 76%);
+}
+h4{
+    font-size:17px;
+    color:hsl(180, 47%, 20%);
+    cursor: pointer;
+}
+h4:hover{
+    color:  hsl(180, 52%, 76%);
+}
+.column{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    width:40%;
+}
+ul li{
+    margin-right: 10px;
+    font-size:11px;
+    color: hsl(180, 8%, 52%);
+    font-weight: 500;
+    list-style-type: disc;
+float: left;
+padding-right:5px;
+}
+li:first-child{
+    list-style-type:none;
+}
+.tags{
+    background-color: hsl(180, 52%, 96%);
+    border-radius:5px;
+padding:5px;
+font-size:10px;
+font-weight:700;
+color: hsl(180, 29%, 50%);
+margin-left:10px;
+cursor: pointer;
+margin-bottom:10px;
+}
+.tags:hover{
+    background-color: hsl(180, 29%, 50%);
+    color:white;
+}
+.tag-row{
+justify-content: flex-end;
+width:40%;
+margin-right:40px;
+}
+h4, ul{
+   padding-top:8px;
+}
+
+.filter-window{
+    width: 80%;
+    background-color:white;
+    height: auto;
+    margin:-40px auto 0 auto;
+    border-radius: 5px;
+align-items: center;
+padding-left: 40px;
+padding-top: 20px;
+padding-bottom: 10px;
+}
+
+.filter-window, .tag-row{
+    display:flex;
+flex-direction: row;
+}
+.tag-row{
+    flex-wrap: wrap;
+}
+.filter-tag, .x{
+    background-color: hsl(180, 52%, 96%);
+font-size:10px;
+font-weight:700;
+color: hsl(180, 29%, 50%);
+margin-right:10px;
+}
+.filter-tag{
+    border-top-left-radius:5px;
+    border-bottom-left-radius:5px;
+    padding:7px;
+    font-size: 12px;
+}
+.x{
+    background-color: hsl(180, 29%, 50%);
+    color:white;
+    margin-left:-13px;
+    border-top-right-radius:5px;
+    border-bottom-right-radius:5px;
+    width:30px;
+    padding:7px;
+}
+.x:hover{
+    background-color: black;
+}
+.x img{
+    vertical-align: middle;
+}
+.filter-tag-both, .company{
+    display:flex;
+    flex-direction:row;
+    width:auto;
+}
+.filter-tag-both{
+    margin-bottom:10px;
+}
+.new, .featured{
+width:auto;
+    border-radius:20px;
+color: white;
+font-weight:700;
+font-size:10px;
+margin-left:10px;
+padding:5px;
+height:20px;
+}
+.company{
+    align-items: center;
+}
+.new{
+    background-color: hsl(180, 47%, 50%);
+}
+.featured{
+    background-color: black;
+padding: 5px 7px 5px 7px;
+}
+.top-margin p{
+display: none;
+}
+.clear {
+position:absolute;
+right:15%;
+color: grey;
+cursor: pointer;
+}
+p .clear:hover{
+text-decoration: underline;
+color: hsl(180, 29%, 60%);
+}
+
+.tags-in-filter{
+    width: 80%;
+display: flex;
+flex-wrap: wrap;
+height:auto;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 600px){
+
+
+
+.header{
+    background-image: url("./images/bg-header-mobile.svg");
+}
+.data-window{
+ 
+    height:auto;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20px;
+    margin-bottom: 50px;
+}
+.data-window img{
+    margin: -30px 0 10px 0;
+    width: 20%;
+}
+.column{
+    width:auto;
+}
+.tag-row{
+width:auto;
+flex-wrap: wrap;
+border-top: 1px solid grey;
+padding: 10px 0 10px 0;
+justify-content: flex-start;
+}
+ul{
+    margin-bottom:10px;
+}
+.tags{
+    margin-bottom:10px;
+    font-size:12px;
+    margin-left: 0;
+    margin-right:10px;
+    padding:8px;
+}
+.filter-window{
+    flex-wrap: wrap;
+    height:auto;
+    margin-bottom:80px;
+    padding:20px 20px 10px 20px;
+}
+.filter-tag-both{
+    margin-bottom:10px;
+}
+.clear{
+    /* width:100px;
+    height:50px; */
+    position: fixed;
+    right: 15%;
+  }
+  .tags-in-filter{
+      width:80%;
+  }
+}
