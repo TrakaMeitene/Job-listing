@@ -239,9 +239,8 @@ ul{
     margin-bottom:10px;
 }
 .clear{
-    /* width:100px;
-    height:50px; */
-    position: fixed;
+
+    /* position: fixed; */
     right: 15%;
   }
   .tags-in-filter{
