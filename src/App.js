@@ -24,21 +24,22 @@ class App extends React.Component {
       styleClass: style,
     });
 
-    let tagsSelected=[]
-let filtered = []
+    let tagsSelected = [];
+    let filtered = [];
 
-for(let i=0; i< filteredItems.length; i++){
-  tagsSelected = filteredItems[i].languages.concat(
-    filteredItems[i].tools,
-    filteredItems[i].level,
-    filteredItems[i].role)
+    for (let i = 0; i < filteredItems.length; i++) {
+      tagsSelected = filteredItems[i].languages.concat(
+        filteredItems[i].tools,
+        filteredItems[i].level,
+        filteredItems[i].role
+      );
 
-    if(tagfilter.every(tag => tagsSelected.includes(tag))){
-filtered.push(filteredItems[i])
-this.setState({filteredItems: filtered})
+      if (tagfilter.every((tag) => tagsSelected.includes(tag))) {
+        filtered.push(filteredItems[i]);
+        this.setState({ filteredItems: filtered });
+      }
     }
-    }
-}
+  };
 
   removeTag = (e) => {
     const { tagfilter, items } = this.state;
@@ -49,32 +50,32 @@ this.setState({filteredItems: filtered})
     this.setState({
       tagfilter: newList,
     });
-let tags =[]
-let filtered= []
-for(let i=0; i< items.length; i++){
- tags = items[i].languages.concat(
-   items[i].tools,
-    items[i].level,
-    items[i].role)
-    if(newList.every(tag => tags.includes(tag))){
-      filtered.push(items[i])
-this.setState({filteredItems: filtered})
+    let tags = [];
+    let filtered = [];
+    for (let i = 0; i < items.length; i++) {
+      tags = items[i].languages.concat(
+        items[i].tools,
+        items[i].level,
+        items[i].role
+      );
+      if (newList.every((tag) => tags.includes(tag))) {
+        filtered.push(items[i]);
+        this.setState({ filteredItems: filtered });
+      }
     }
+
+    if (newList.length === 0) {
+      this.setState({ filteredItems: items });
     }
-  
-    if(newList.length === 0){
-      this.setState({filteredItems: items})
-    }
-console.log("nostrada")
   };
 
-
-  clear=()=>{
-    const { items}=this.state
+  clear = () => {
+    const { items } = this.state;
     this.setState({
       tagfilter: [],
-    filteredItems: items})
-  }
+      filteredItems: items,
+    });
+  };
 
   render() {
     const { items, styleClass, tagfilter, filteredItems } = this.state;
@@ -90,18 +91,23 @@ console.log("nostrada")
       <div>
         <div className="header"></div>
         <div className={tagfilter.length > 0 ? styleClass : "top-margin"}>
-        <div className="tags-in-filter">
-          {tagfilter.map((tag) => (
-            <div className="filter-tag-both" key={tagfilter.indexOf(tag)} onClick={this.removeTag}>
-              <div className="filter-tag">{tag}</div>
-              <div className="x" >
-                <img src={remove} alt="remove" />
+          <div className="tags-in-filter">
+            {tagfilter.map((tag) => (
+              <div
+                className="filter-tag-both"
+                key={tagfilter.indexOf(tag)}
+                onClick={this.removeTag}
+              >
+                <div className="filter-tag">{tag}</div>
+                <div className="x">
+                  <img src={remove} alt="remove" />
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
           </div>
-          <p className="clear" onClick={this.clear}>{"Clear"}</p>
-        
+          <p className="clear" onClick={this.clear}>
+            {"Clear"}
+          </p>
         </div>
         {itemList.map((item) => (
           <DataWindow
